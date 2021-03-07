@@ -1,0 +1,1 @@
+INSERT INTO employee (id , first_name , last_name , address ) values ( 1 , 'bat' , 'man' , 'iran' )
