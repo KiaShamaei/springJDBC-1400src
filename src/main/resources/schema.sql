@@ -1,11 +1,12 @@
 
-DROP TABLE IF EXISTS employee;
 
 CREATE TABLE employee (
-id int not null primary key ,
-first_name varchar(255) not null,
-last_name varchar(255) not null,
-address varchar(255) not null
+id NUMBER GENERATED ALWAYS AS IDENTITY ,
+first_name varchar2(255) not null,
+last_name varchar2(255) not null,
+address varchar2(255) not null,
+joiningdate DATE default sysdate
+);
 
-)
+INSERT INTO employee ( first_name , last_name , address ) values (  'bat' , 'man' , 'iran' )
 

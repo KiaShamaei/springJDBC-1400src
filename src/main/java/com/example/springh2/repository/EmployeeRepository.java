@@ -14,7 +14,7 @@ import com.example.springh2.model.Employee;
 @Repository
 public class EmployeeRepository {
 	private final String GET_ALL = "SELECT * FROM employee";
-	private final String INSERT = "INSERT INTO employee ( id,first_name , last_name , address ) values ( ?,? , ? , ? )";
+	private final String INSERT = "INSERT INTO employee ( first_name , last_name , address ) values ( ? , ? , ? )";
 	private final String Edit = "UPDATE employee set first_name = ? , last_name=? , address= ? WHERE id = ?";
 	private final String Delete = "DELETE FROM employee WHERE id=?";
 	@Autowired
@@ -34,7 +34,7 @@ public class EmployeeRepository {
 	public boolean addEmployee(Employee e) {
 		
 		
-		if (jdcJdbcTemplate.update(INSERT,e.getId(),e.getFirst_name(),e.getLast_name(),e.getAddress())>0)return true;
+		if (jdcJdbcTemplate.update(INSERT,e.getFirst_name(),e.getLast_name(),e.getAddress())>0)return true;
 		else return false;
 	}
 	public boolean editEmployee(Employee emp) {
